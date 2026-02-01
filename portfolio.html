@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            background-color: #757F4d;
+            font-family: Arial, Helvetica, sans-serif;
+            margin:0;
+            padding-top:80px;
+        }
+        .logo{
+            display: flex;
+            gap: 12px;
+            background-color: #616d36;
+            padding: 5px;
+            position:fixed;
+            top:0;
+            width:100%;
+            z-index:1000;
+        }
+        .logo span{
+            display: flex;
+            align-items: center;
+        }
+
+        .icon{
+            font-size: 1.6rem;
+            color: #ede6d1;
+            font-weight: bold;
+            padding-left: 40px;
+        }
+        .name{
+            font-size: 1.6rem;
+            color: #ede6d1;
+            font-weight: bold;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            overflow: hidden;
+            display: flex; 
+            gap:18px;
+            margin-left: 500px;
+        }
+        ul li {
+            float: left;
+        }
+        ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: medium;
+        }
+        li a:hover {
+            color:#d5caa8;
+        }
+        .nav-link.active{
+            color:#e1ce94 !important;
+            text-decoration: underline;
+            font-size: 1.2rem;
+        }
+        .view,.conme{
+            border-style: solid;
+            border-color: #d9ba5b ;
+            border-width: 3px;
+            margin-left: 70px;
+            border-radius: 30px;
+            padding: 16px 30px;
+            font-size: 1.1rem;
+            background-color: #757F4d;
+            margin-right: -20px;
+            cursor: pointer;
+        }
+        .conme{
+            padding: 14px 30px;
+        }
+        .view:hover,.conme:hover {
+            background-color: #d9ba5b;
+            color:#e3dabc;
+            border-width: 3px;
+        }
+        .conme i{
+            color:inherit;
+            margin-right: 8px;
+        }
+        .hero{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 70px;
+            padding-top: 160px;
+        }
+
+        .hero-text{
+            width: 60%;
+        }
+
+        .hero-img{
+            width: 35%;
+            text-align: center;
+        }
+
+        .hero-img img{
+            width: 280px;
+            height:280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #d9ba5b;
+            box-shadow:0 0 25px rgba(217,186,91,0.7);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hero-img img:hover{
+            transform:scale(1.05);
+        }
+        .About,.project,.skills,.contact{
+            text-align: center;
+            justify-content: center;
+        }
+        .abme{
+            font-size: 2.7rem;
+            color:#d9ba5b;
+            margin-top: 220px;
+            margin-bottom: 150px;
+        }
+        .con{
+            font-size: 2.7rem;
+            color:#d9ba5b;
+            margin-top: 80px;
+            margin-bottom: 220px;
+        }
+        .skill{
+            font-size: 2.7rem;
+            color:#d9ba5b;
+            margin-bottom: 120px;
+            margin-top: 80px;
+        }
+        #abme{
+            color: #e6d9b0;
+            line-height: 30px;
+            font-size: 1.3rem;
+            margin-bottom: 240px;
+        }
+        #about,
+        #projects,
+        #skills,
+        #contact {
+            scroll-margin-top: 100px; 
+        }
+
+        .box,.boxes {
+            text-align: center;
+            justify-content: center;
+            display: grid;
+            row-gap: 20px;
+            column-gap: 70px;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin-bottom: 60px;
+        }
+        .boxes{
+             text-align: center;
+            justify-content: center;
+            display: grid;
+            row-gap: 30px;
+            column-gap: 70px;
+            margin-bottom: 60px;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        .pro{
+            font-size: 2.7rem;
+            color:#d9ba5b;
+            margin-top: 200px;
+            margin-bottom: 50px;
+        }
+        .movie,.juice,.college,
+        .ecom,.calculator,
+        .pizza,.web,.prog,.add,.ui,.tools,.current {
+            height: 220px;
+            background-color:#616d36;
+            box-shadow: 0px 0px 25px rgba(156,170,101,0.7);
+            transition: all 0.3s ease;
+            border-radius: 15px;
+            text-align: left;
+            margin-top: 30px;
+            padding-left: 30px;
+            color:#e6d9b0;
+            line-height: 24px;
+        }
+        .web,.prog,.add,.ui,.tools,.current{
+            height:180px;
+        }
+
+        .movie:hover,.juice:hover,
+        .college:hover,.ecom:hover,
+        .calculator:hover,.pizza:hover,.web:hover,
+        .prog:hover,.add:hover,.ui:hover,
+        .tools:hover,.current:hover {
+            box-shadow: 0px 0px 20px 10px #9caa65;
+            transform: translateY(-5px);
+        }
+        .movie,.calculator,.prog,.current{
+            margin-left: 50px;
+        }
+        .college,.ecom,.tools{
+            margin-right: 50px;
+        }
+        .h2{
+            color:#e3dabc;
+            
+        }
+        .form{
+            text-align: center;
+            justify-content: center;
+        }
+        input[type=text]{
+            background-color: #616d36;
+            padding:15px 30px;
+            width:500px;
+            border:none;
+            margin-bottom: 18px;
+            border-radius: 30px;
+            color:#e6d9b0;
+            font-size: 1rem;
+        }
+        input:focus{
+            outline:none;
+            border-color: #c4a64b;
+            box-shadow:0 0 15px rgba(217,186,91,0.7);
+        }
+        form Button{
+            background-color: #616d36;
+            padding:15px 30px;
+            width:550px;
+            border:none;
+            margin-bottom: 100px;
+            border-radius: 30px;
+            color:#c4a64b;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        form Button:hover{
+            background-color: #c4a64b;
+            color:#d5caa8;
+        }
+        textarea{
+            background-color: #616d36;
+            padding:15px 30px;
+            width:500px;
+            border:none;
+            border-radius: 20px;
+            height:100px;
+            margin-bottom: 18px;
+            color:#e6d9b0;
+            font-size: 1rem;
+        }
+        textarea:focus{
+            outline:none;
+            border-color: #c4a64b;
+            box-shadow:0 0 15px rgba(217,186,91,0.7);
+        }
+        .hero-socials a{
+            color:#ede6d1;
+            font-size:1.8rem;
+            margin-right:50px;
+            transition: 0.3s;
+        }
+
+        .hero-socials a:hover{
+            color:#d9ba5b;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="home" id="home">
+        <div class="logo">
+            <span class="icon">&lt;/&gt;</span>
+            <span class="name" style="background: linear-gradient(to right,white,#e1ce94,#c4a64b);
+                                -webkit-background-clip: text;
+                                -webkit-text-fill-color: transparent;
+                                font-weight: bold;">Tanniru kasthuri</span>
+            <ul>
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects"class="nav-link">Project</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+        <div class="hero">
+        <div class="hero-text">
+            <span style="background: linear-gradient(to right,white,#e1ce94,#c4a64b);
+                                -webkit-background-clip: text;
+                                -webkit-text-fill-color: transparent;
+                                font-weight: bold; font-size: 2.5rem; margin-left: 70px;
+                                "> Tanniru kasthuri</span>
+            <h2 style="color:#e3dabc;margin-left: 70px;">Aspiring  <span style="color:#d9ba5b">Full-Stack Developer | UI/UX Enthusiast</span></h2>
+            <p style="color:#e6d9b0;margin-left:70px;line-height:23px;margin-top: 50px;
+                        font-size: 1.1rem;margin-bottom: 60px;">
+                I'm a 2nd-year Computer Science Student
+                who designs clean,user-friendly interfaces<br>
+                 and bulid responsive web 
+                apllication using HTML,CSS,JavaScript and React.<br>
+                currently learning SQL and
+                and backend fundamentals to grow as a
+                full-stack developer</p>
+            <a href="#projects">
+                <button class="view">&lt;/&gt; View Projects</button>
+            </a>
+            <a href="#contact">
+                <button class="conme">
+                    <i class="fa-brands fa-telegram" style="font-size:25px;"></i> Contact Me
+                </button>
+            </a>
+            <div class="hero-socials" style="margin-left:130px; margin-top:30px;">
+                <a href="https://www.linkedin.com/in/tanniru-kasthuri-237782359" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/kasthuritanniru" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+
+        </div>
+        <div class="hero-img">
+            <img src="https://i.postimg.cc/Bv1CDtWr/Gemini-Generated-Image-htgzr7htgzr7htgz.png">
+        </div>
+        </div>
+    </div>
+    <div class="About" id="about">
+        <h1 class="abme">About Me</h1>
+        <p id="abme">I’m a 2nd-year Computer Science Engineering student with a strong interest in Full-Stack Development.<br>
+        I enjoy designing clean, user-friendly, and responsive web interfaces.<br>
+        I have experience with HTML, CSS, and JavaScript, and I’m currently learning React.<br>
+        Along with frontend skills, I’m building my knowledge in SQL and backend fundamentals.<br>
+        I like working on real-world projects that improve my problem-solving skills.<br>
+        My goal is to become a skilled full-stack developer and grow continuously in tech.</p>
+
+    </div>
+    <div class="project" id="projects">
+        <h1 class="pro">projects</h1>
+        <div class="box">
+            <div class="movie">
+                <h2>🎬 Movie Search Application</h2>
+                <p>Developed a Movie Search App using JavaScript, JSON, and DOM manipulation.
+                Implemented a search feature to dynamically fetch and display movie details with interactive UI updates.</p>
+            </div>
+            <div class="juice">
+                <h2>🥤 Kasthuri Smoothies – UI/UX Animated Project</h2>
+                <p>Designed an animated UI/UX project for a smoothies drinks brand using modern design principles.
+                Focused on smooth animations, transitions, and engaging user interactions to enhance user experience.</p>
+            </div>
+            <div class="college">
+                <h2>🎓 College Events Website – Full Frontend Project</h2>
+                <p>Built a complete frontend website for college events using HTML, CSS, and JavaScript.
+                Implemented page navigation flow, interactive elements, and responsive layouts for a smooth user journey.</p>
+            </div>
+            <div class="calculator">
+                <h2>🧮 Functional Calculator</h2>
+                <p>Created a fully functional calculator using HTML, CSS, and JavaScript.
+                Handled user input, calculations, and real-time result display with clean UI design.</p>
+            </div>
+            <div class="pizza">
+                <h2>🍕 Fun Pizza Menu – UI/UX Prototype</h2>
+                <p>Designed an interactive pizza menu UI/UX prototype with smooth interactions and engaging visuals.
+                Focused on usability, layout structure, and playful user experience</p>
+            </div>
+            <div class="ecom">
+                <h2>🛒 E-Commerce Product Animation Prototype</h2>
+                <p>Developed a UI/UX prototype for an e-commerce product page with smooth product animations.
+                Focused on micro-interactions, transitions, and modern UI effects to improve product presentation.</p>
+            </div>
+        </div>
+    </div>
+    <div class="skills" id="skills">
+        <h1 class="skill">Skills</h1>
+        <div class="boxes">
+            <div class="prog">
+                <h2>💻Programming Languages</h2>
+                <p>C,Java,JavaScript,SQL</p>
+            </div>
+            <div class="web">
+                <h2>🌐Web Technologies</h2>
+                <p>HTML5,CSS3</p>
+            </div>
+            <div class="ui">
+                <h2>🎨UI/UX Design</h2>
+                <p>User Interface Design,
+                Wireframing & Prototyping,
+                Smooth Animations & Micro-interaction,
+                User-centric Design Principles</p>
+            </div>
+            <div class="tools">
+                <h2>⚙️Tools</h2>
+                <p>VS code,GitHub,Figma</p>
+            </div>
+            <div class="current">
+                <h2>📚 Currently Learning</h2>
+                <p>React,
+                Backend Fundamentals</p>
+            </div>
+            <div class="add">
+                <h2>🧠 Additional Skills</h2>
+                <p>Problem Solving,
+                Creative Thinking,
+                Attention to UI Details,
+                Continuous Learning Mindset</p>
+            </div>
+        </div>
+    </div>
+    <div class="contact" id="contact">
+        <h2 class="con">Contact Me</h2>
+        <form class="form">
+            <input type="text" placeholder="Name"><br>
+            <input type="text" placeholder="Email"><br>
+            <textarea placeholder="enter some text..."></textarea><br>
+            <button>Send</button>
+        </form>
+    </div>
+    <script>
+        const sections = document.querySelectorAll("div[id]");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                const sectionHeight = section.offsetHeight;
+
+                if (pageYOffset >= sectionTop &&
+                    pageYOffset < sectionTop + sectionHeight) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + current) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
