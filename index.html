@@ -26,6 +26,11 @@
             top:0;
             width:100%;
             z-index:1000;
+            align-items:center;
+            justify-content: space-between;
+        }
+        ul{
+             margin-right: 40px;
         }
         .logo span{
             display: flex;
@@ -49,7 +54,6 @@
             overflow: hidden;
             display: flex; 
             gap:18px;
-            margin-left: 500px;
         }
         ul li {
             float: left;
@@ -82,6 +86,9 @@
             background-color: #757F4d;
             margin-right: -20px;
             cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+            color: inherit;
         }
         .conme{
             padding: 14px 30px;
@@ -359,16 +366,24 @@
         height: 170px;
     }
 }
+           .brand{
+               display: flex;
+               align-items: center;
+               gap: 8px; 
+           }
+
     </style>
 </head>
 <body>
     <div class="home" id="home">
         <div class="logo">
+            <div class="brand">
             <span class="icon">&lt;/&gt;</span>
             <span class="name" style="background: linear-gradient(to right,white,#e1ce94,#c4a64b);
                                 -webkit-background-clip: text;
                                 -webkit-text-fill-color: transparent;
                                 font-weight: bold;">Tanniru kasthuri</span>
+            </div>
             <ul>
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
@@ -394,8 +409,7 @@
                 currently learning SQL and
                 and backend fundamentals to grow as a
                 full-stack developer</p>
-            <a href="#projects">
-                <button class="view">&lt;/&gt; View Projects</button>
+            <a href="#projects" class="view">&lt;/&gt; View Projects
             </a>
             <a href="#contact">
                 <button class="conme">
@@ -501,14 +515,14 @@
     <div class="contact" id="contact">
         <h2 class="con">Contact Me</h2>
         <form class="form">
-            <input type="text" placeholder="Name"><br>
-            <input type="text" placeholder="Email"><br>
-            <textarea placeholder="enter some text..."></textarea><br>
+            <input type="text" placeholder="Name" required><br>
+            <input type="text" placeholder="Email" required><br>
+            <textarea placeholder="enter some text..." required></textarea><br>
             <button>Send</button>
         </form>
     </div>
     <script>
-        const sections = document.querySelectorAll("div[id]");
+        const sections = document.querySelectorAll("#home, #about, #projects, #skills, #contact");
         const navLinks = document.querySelectorAll(".nav-link");
 
         window.addEventListener("scroll", () => {
