@@ -278,18 +278,40 @@
         .hero-socials a:hover{
             color:#d9ba5b;
         }
-        @media screen and (max-width: 600px) {
-        body {
-            font-size: 16px;
-        }
-        .container {
-            width: 95%;
-            margin: auto;
-        }
-        nav {
-             flex-direction: column;
-        }
-        }
+       @media screen and (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .hero-text, .hero-img {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-text span, .hero-text h2, .hero-text p {
+        margin-left: 0 !important;
+    }
+
+    ul {
+        flex-direction: column;
+        margin-left: 0 !important;
+        gap: 10px;
+    }
+
+    input[type=text], textarea, form Button {
+        width: 90%;
+    }
+
+    .box, .boxes {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+        column-gap: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 
     </style>
 </head>
