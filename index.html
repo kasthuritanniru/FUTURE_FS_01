@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         html{
             scroll-behavior: smooth;
@@ -277,8 +279,44 @@
         .hero-socials a:hover{
             color:#d9ba5b;
         }
+        @media screen and (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                padding: 20px;
+            }
 
+<<<<<<< HEAD
 
+=======
+            .hero-text, .hero-img {
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero-text span, .hero-text h2, .hero-text p {
+                margin-left: 0 !important;
+            }
+
+            ul {
+                flex-direction: column;
+                margin-left: 0 !important;
+                gap: 10px;
+            }
+
+            input[type=text], textarea, form Button {
+                width: 90%;
+            }
+
+            .box, .boxes {
+                grid-template-columns: 1fr;
+                row-gap: 20px;
+                column-gap: 0;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    
+>>>>>>> 9b6c0b4 (Mobile responsive fix)
     </style>
 </head>
 <body>
